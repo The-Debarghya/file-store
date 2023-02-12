@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <nav class="navbar is-transparent is-light is-info has-shadow">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/dashboard">
+        <i class="fas fa-folder-open"></i>
+        <strong>
+          File Store
+        </strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="false"></span>
+        <span aria-hidden="false"></span>
+        <span aria-hidden="false"></span>
+      </a>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu is-active">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/dashboard">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">
+            Choose
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="/upload">
+              Upload
+            </a>
+            <a class="navbar-item" href="/addtext">
+              Add Text Data
+            </a>
+            <a class="navbar-item" href="/files">
+              View/Download
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" href="/logout">
+                <span class="icon">
+                  <i class="fas fa-duotone fa-right-from-bracket"></i>
+                </span>
+                <span>
+                  Logout
+                </span>
+              </a>
+            </p>
+            <p class="control">
+            <form method="post" action="delete">
+              <button class="button is-danger is-light" type="submit"><span class="icon is-small">
+                  <i class="fas fa-solid fa-trash"></i>
+                </span><span>Delete Account</span></button>
+            </form>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <h1 class="title is-2"></h1>
+  <section class="hero bd-hero bd-is-basic is-large">
+    <div class="hero-body">
+      <p class="title">
+        Dashboard
+      </p>
+      <p class="subtitle">
+        Hello, <strong>
+          <%= user %>
+        </strong>. Navigate to uploading/viewing/downloading files.
+      </p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>File Store</strong> by <a href="https://github.com/The-Debarghya">Debarghya Maitra</a>. The source code is not licensed. 
+            The website content is not licensed. Generated with <a href="">EJS</a> and disgust.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

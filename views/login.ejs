@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body class="has-background-info-light">
+  <div class="hero is-fullheight">
+    <div class="hero-body is-justify-content-center is-align-items-center">
+      <div class="columns is-flex is-flex-direction-column box">
+        <div class="column">
+          <p class="title">
+            Log in to File Store.
+          </p>
+        </div>
+        <form method="post" action="login">
+          <div class="field column">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input is-primary is-hovered" type="text" name="uname" placeholder="Username" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field column">
+            <p class="control has-icons-left">
+              <input class="input is-primary is-hovered" type="password" name="pw" placeholder="Password" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="column control">
+            <button class="button is-info is-fullwidth" type="submit">Login</button>
+          </div>
+        </form>
+        <div class="has-text-centered">
+          <p class="is-size-7"> Don't have an account? <a href="/register" class="has-text-info">Register</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

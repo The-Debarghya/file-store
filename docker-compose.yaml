@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=test_db
+    volumes:
+      - mongodb_data:/data/db
+  file-store:
+    image: heisenberg8622/file-store:latest
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/test_db
+      - SECRET=db982b9^&%UB%*&CVIB9n83.6nddasdl'l@!
+      - DB_STRING=mongodb://mongodb:27017/test_db
+    ports:
+      - 3000:3000
+    volumes:
+      - uploads:/app/uploads
+    depends_on:
+      - mongodb
+    command: npm start
+
+volumes:
+  mongodb_data:
+  uploads:

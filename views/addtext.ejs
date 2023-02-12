@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Text Data</title>
+</head>
+
+<body>
+    <section class="hero is-info">
+        <div class="hero-body">
+            <p class="title">
+                Add Text Data
+            </p>
+            <p class="subtitle">
+                Your text data will be saved into a file. Back to <strong><a href="/dashboard">Dashboard</a></strong>.
+            </p>
+        </div>
+    </section>
+
+    <form class="box" method="post" action="addtext">
+        <div class="field">
+            <label class="label">FileName</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="File Name.txt" name="filename" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Text to Store</label>
+            <div class="control">
+                <textarea class="textarea" placeholder="Textarea" name="data" required></textarea>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <p class="control">
+              <button class="button is-info" type="submit"><span class="icon is-small">
+                <i class="fas fa-solid fa-file-arrow-up"></i>
+                </span><span>Submit</span></button>
+            </p>
+            <p class="control">
+                <a class="bd-tw-button button is-light is-danger" href="/dashboard">
+                  <span class="icon">
+                    <i class="fas fa-solid fa-ban"></i>
+                  </span>
+                  <span>
+                    Cancel
+                  </span>
+                </a>
+              </p>
+        </div>
+    </form>
+</body>
+
+</html>

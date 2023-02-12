@@ -1,0 +1,24 @@
+# Python Bytecode Files
+*.pyc
+__pycache__/*
+
+# Doc Files
+*.pdf
+*.doc
+*.docx
+
+# Images
+*.jpg
+*.jpeg
+*.png
+uploads/
+
+# config and data
+Names.json
+.vscode/*
+
+# secrets
+.env
+
+# dependancies
+node_modules/

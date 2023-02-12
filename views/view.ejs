@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View File</title>
+</head>
+<body>
+    <% if (fileName.endsWith('.txt')) { %>
+        <section class="hero bd-hero bd-is-basic">
+            <div class="hero-body">
+              <p class="title">
+               <%= fileName %>
+              </p>
+              <p class="subtitle">
+                Contents of the file. Currently logged in as <strong><%= user %></strong>.
+              </p>
+              <p class="subtitle is-6">
+                Go back to <a href="/dashboard">Dashboard.</a>Check out other <a href="/files">files</a>.
+              </p>
+            </div>
+          </section>
+        <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <%= content %>
+              </div>
+            </div>
+        </div> 
+        <% } else if (fileName.endsWith('.pdf')) { %>
+          <section class="hero bd-hero bd-is-basic">
+              <div class="hero-body">
+                <p class="title">
+                 <%= fileName %>
+                </p>
+                <p class="subtitle">
+                  Preview of your document. Currently logged in as <strong><%= user %></strong>.
+                </p>
+                <p class="subtitle is-6">
+                  Go back to <a href="/dashboard">Dashboard.</a>Check out other <a href="/files">files</a>.
+                </p>
+                <embed src="/uploads/<%= folder %>/<%= fileName %>" width="1200" height="375" type="application/pdf">
+              </div>
+            </section>
+    <% } else if (fileName.endsWith('.png')) { %>
+        <section class="hero bd-hero bd-is-basic">
+            <div class="hero-body">
+              <p class="title">
+               <%= fileName %>
+              </p>
+              <p class="subtitle">
+                Preview of your file. Currently logged in as <strong><%= user %></strong>.
+              </p>
+              <p class="subtitle is-6">
+                Go back to <a href="/dashboard">Dashboard.</a>Check out other <a href="/files">files</a>.
+              </p>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-1by1">
+                    <img src="data:image/png;base64, <%= content %>" alt="image">
+                  </figure>
+                </div>
+            </div>
+            </div>
+          </section>
+        
+    <% } else if (fileName.endsWith('.gif')) { %>
+      <section class="hero bd-hero bd-is-basic">
+        <div class="hero-body">
+          <p class="title">
+           <%= fileName %>
+          </p>
+          <p class="subtitle">
+            Preview of your file. Currently logged in as <strong><%= user %></strong>.
+          </p>
+          <p class="subtitle is-6">
+            Go back to <a href="/dashboard">Dashboard.</a>Check out other <a href="/files">files</a>.
+          </p>
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-1by1">
+                <img src="data:image/gif;base64, <%= content %>" alt="image">
+              </figure>
+            </div>
+        </div>
+        </div>
+      </section>
+    <% } else { %>
+      <section class="hero bd-hero bd-is-basic">
+        <div class="hero-body">
+          <p class="title">
+           <%= fileName %>
+          </p>
+          <p class="subtitle">
+            Preview of your file. Currently logged in as <strong><%= user %></strong>.
+          </p>
+          <p class="subtitle is-6">
+            Go back to <a href="/dashboard">Dashboard.</a>Check out other <a href="/files">files</a>.
+          </p>
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-1by1">
+                <img src="data:image/jpeg;base64, <%= content %>" alt="image">
+              </figure>
+            </div>
+        </div>
+        </div>
+      </section>
+    <% } %>
+    <section class="section is-small "></section>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>File Store</strong> by <a href="https://github.com/The-Debarghya">Debarghya Maitra</a>. The source code is not licensed. 
+            The website content is not licensed. Generated with <a href="">EJS</a> and disgust.
+          </p>
+        </div>
+      </footer>
+</body>
+</html>
