@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . /app/
 
-VOLUME [ "/app/uploads" ]
-
 EXPOSE $PORT
 
 CMD ["npm", "start"]
