@@ -51,6 +51,6 @@ app.all('*', (req, res) => {
     res.status(404).send("<h1>Page Not Found</h1>");
 })
 
-app.listen(3000, '0.0.0.0', () => {
-    console.log("Server is up and running at ::3000")
+app.listen(process.env.PORT, '0.0.0.0', () => {
+    console.log(`Server is up and running at ::${process.env.PORT}`)
 });

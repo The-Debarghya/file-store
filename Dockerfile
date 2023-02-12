@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . /app/
 
-EXPOSE 3000
+VOLUME [ "/app/uploads" ]
+
+EXPOSE $PORT
 
 CMD ["npm", "start"]
