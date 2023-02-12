@@ -151,8 +151,10 @@ router.get('/logout',isAuth, (req, res, next) => {
             return next(err);
         }
         req.session.destroy((err) => {
-            console.error(err.message);
-            return next(err);
+            if(err) {
+                console.error(err.message);
+                return next(err);
+            }
         });
         res.set("Content-Security-Policy", "script-src 'sha256-Qx9mL2K9oky7Tu8gS1KRgL3vhyhzv1Ixi3oXyswWXAw='")
         res.render('success', {message: 'Logged-out Successfully!', redirect: '/'});
