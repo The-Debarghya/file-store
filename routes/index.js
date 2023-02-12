@@ -15,13 +15,6 @@ function isAuth(req, res, next) {
     }
 }
 
-function sessionExists(req,res,next) {
-    if(!req.session.data) {
-        return res.redirect("/"); 
-    } else {
-      next();
-    }
-}
 
 function hashUser(username) {
     const hash = crypto.createHash('sha256').update(username).digest('hex');

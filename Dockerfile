@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . /app/
 
+RUN mkdir /app/uploads
+
 EXPOSE $PORT
 
 CMD ["npm", "start"]
