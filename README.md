@@ -15,4 +15,3 @@ npm start
 docker compose up
 ```
 
-- **P.S- Since our University is very nice and doesn't give us an edu email, I have deployed it to Railway free plan. So please refrain from spamming the repository, cause it can't handle too much uploads. Enough if you try once.**
